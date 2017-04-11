@@ -1,1 +1,26 @@
 ---
+- name: download the dependent libraries' source code
+  unarchive:
+    src: https://github.com/{{ item.user }}/{{ item.repo }}/archive/{{ item.file }}
+    dest: /usr/local/src
+    remote_src: yes
+  with_items:
+    - user: facebook
+      repo: folly
+      file: v{{ beringei_fb_version }}.tar.gz
+    - user: facebook
+      repo: wangle
+      file: v{{ beringei_fb_version }}.tar.gz
+    - user: facebook
+      repo: fbthrift
+      file: v{{ beringei_fb_version }}.tar.gz
+    - user: facebook
+      repo: proxygen
+      file: "{{ beringei_proxygen_commit_hash }}.tar.gz"
+    - user: no1msd
+      repo: mstch
+      file: master.tar.gz
+    - user: facebook
+      repo: zstd
+      file: v{{ beringei_zstd_version }}.tar.gz
+  register: beringei_dep_src_download_result
