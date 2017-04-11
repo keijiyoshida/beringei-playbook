@@ -1,2 +1,3 @@
 # beringei-playbook
-Ansible Playbook for Beringei
+
+Ansible Playbook for [Beringei](https://github.com/facebookincubator/beringei)
