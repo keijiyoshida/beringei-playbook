@@ -1,0 +1,20 @@
+---
+- name: install yum packages
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - "@Development tools"
+    - tree
+    - pcre-devel
+    - zlib-devel
+    - glib2-devel
+    - curl-devel
+    - openssl-devel
+    - libselinux-python
+    - python-setuptools
+
+- name: set timezone to Asia/Tokyo
+  timezone:
+    name: Asia/Tokyo

@@ -1,0 +1,7 @@
+# local
+
+[beringei]
+localhost:60022
+
+[all:vars]
+stage=local

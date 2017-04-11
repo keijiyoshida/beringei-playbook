@@ -1,0 +1,6 @@
+---
+- hosts: beringei
+  become: true
+  roles:
+    - common
+    - beringei
