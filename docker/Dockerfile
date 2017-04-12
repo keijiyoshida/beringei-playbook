@@ -2,7 +2,7 @@ FROM centos:6.8
 MAINTAINER Keiji Yoshida <keijiyoshida.mail@gmail.com>
 
 RUN yum -y update
-RUN yum -y install sudo openssh-server telnet vim
+RUN yum -y install sudo openssh-server telnet vim wget
 
 RUN groupadd beringei
 RUN useradd beringei -d /home/beringei -g beringei -s /bin/bash
